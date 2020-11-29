@@ -38,9 +38,9 @@ describe('Datastore', () => {
     expect(res).toEqual(
       makeAbsolute([
         '/file-a.md',
-        '/subfolder/file-b.md',
-        '/node_modules/file-in-nm.md',
-        '/subfolder/node_modules/file-in-sub-nm.md',
+        '/info/file-b.md',
+        '/docs/file-in-nm.md',
+        '/info/docs/file-in-sub-nm.md',
       ])
     );
   });
@@ -49,11 +49,11 @@ describe('Datastore', () => {
     const ds = new FileDataStore(
       makeConfig({
         include: ['**/*'],
-        ignore: ['**/node_modules/**'],
+        ignore: ['**/docs/**'],
       })
     );
     const res = toStringSet(await ds.listFiles());
-    expect(res).toEqual(makeAbsolute(['/file-a.md', '/subfolder/file-b.md']));
+    expect(res).toEqual(makeAbsolute(['/file-a.md', '/info/file-b.md']));
   });
 });
 
