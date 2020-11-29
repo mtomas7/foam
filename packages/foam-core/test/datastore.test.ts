@@ -8,7 +8,13 @@ Logger.setLevel('error');
 const testFolder = URI.joinPath(URI.file(__dirname), 'test-datastore');
 
 console.log('platform', process.platform);
+console.log('__dirname', __dirname);
+console.log('__dirname URI', URI.file(__dirname));
+console.log('__dirname path', URI.file(__dirname).path);
+console.log('__dirname fs path', URI.file(__dirname).fsPath);
+
 console.log('test folder', testFolder);
+console.log('test path', testFolder.path);
 
 function makeConfig(params: { include: string[]; ignore: string[] }) {
   return createConfigFromObject(
