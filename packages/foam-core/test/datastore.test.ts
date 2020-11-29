@@ -1,4 +1,4 @@
-import { createConfigFromFolders, createConfigFromObject } from '../src/config';
+import { createConfigFromObject } from '../src/config';
 import { Logger } from '../src/utils/log';
 import { URI } from '../src/common/uri';
 import { FileDataStore } from '../src';
@@ -6,6 +6,9 @@ import { FileDataStore } from '../src';
 Logger.setLevel('error');
 
 const testFolder = URI.joinPath(URI.file(__dirname), 'test-datastore');
+
+console.log('platform', process.platform);
+console.log('test folder', testFolder.path);
 
 function makeConfig(params: { include: string[]; ignore: string[] }) {
   return createConfigFromObject(
