@@ -379,14 +379,13 @@ export class URI implements UriComponents {
       throw new Error(`[UriError]: cannot call joinPath on URI without path`);
     }
     let newPath: string;
-    // Patching this as part of foam#391
-    // if (isWindows && uri.scheme === 'file') {
-    //   newPath = URI.file(
-    //     paths.win32.join(uriToFsPath(uri, true), ...pathFragment)
-    //   ).path;
-    // } else {
-    newPath = paths.posix.join(uri.path, ...pathFragment);
-    // }
+    if (isWindows && uri.scheme === 'file') {
+      newPath = URI.file(
+        paths.win32.join(uriToFsPath(uri, true), ...pathFragment)
+      ).path;
+    } else {
+      newPath = paths.posix.join(uri.path, ...pathFragment);
+    }
     return uri.with({ path: newPath });
   }
 
