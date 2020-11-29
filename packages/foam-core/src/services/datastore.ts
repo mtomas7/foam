@@ -70,7 +70,7 @@ export class FileDataStore implements IDataStore {
     this._folders = config.workspaceFolders.map(f =>
       f.path.replace(/\\\\/g, '/')
     );
-
+    Logger.info(this._folders);
     let includeGlobs: string[] = [];
     let ignoreGlobs: string[] = [];
     this._folders.forEach(folder => {
