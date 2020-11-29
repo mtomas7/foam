@@ -41,7 +41,7 @@ describe('Datastore', () => {
     expect(await ds.listFiles()).toHaveLength(0);
   });
 
-  it.skip('returns only markdown files', async () => {
+  it('returns only markdown files', async () => {
     const ds = new FileDataStore(
       makeConfig({
         include: ['**/*'],
@@ -59,7 +59,7 @@ describe('Datastore', () => {
     );
   });
 
-  it.skip('supports excludes', async () => {
+  it('supports excludes', async () => {
     const ds = new FileDataStore(
       makeConfig({
         include: ['**/*'],

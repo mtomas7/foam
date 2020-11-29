@@ -9,7 +9,7 @@ import { URI } from '../../src/common/uri';
 
 Logger.setLevel('error');
 
-describe.skip('generateLinkReferences', () => {
+describe('generateLinkReferences', () => {
   let _graph: NoteGraphAPI;
 
   beforeAll(async () => {
