@@ -63,6 +63,10 @@
       {
         "command": "foam-vscode.create-note-from-template",
         "title": "Foam: Create New Note From Template"
+      },
+      {
+        "command": "foam-vscode.create-new-template",
+        "title": "Foam: Create New Template"
       }
     ],
     "configuration": {
